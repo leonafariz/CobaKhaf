@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Colors - KAHF Design System */
+  --color-primary: #0f5238;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #2d6a4f;
+  --color-on-primary-container: #a8e7c5;
+  --color-primary-fixed: #b1f0ce;
+  --color-primary-fixed-dim: #95d4b3;
+  --color-on-primary-fixed: #002114;
+  --color-on-primary-fixed-variant: #0e5138;
+  --color-inverse-primary: #95d4b3;
+
+  --color-secondary: #116c4a;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #a1f4c8;
+  --color-on-secondary-container: #1b724f;
+  --color-secondary-fixed: #a1f4c8;
+  --color-secondary-fixed-dim: #86d7ad;
+  --color-on-secondary-fixed: #002113;
+  --color-on-secondary-fixed-variant: #005236;
+
+  --color-tertiary: #8e1700;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #b72607;
+  --color-on-tertiary-container: #ffcfc5;
+  --color-tertiary-fixed: #ffdad3;
+  --color-tertiary-fixed-dim: #ffb4a4;
+  --color-on-tertiary-fixed: #3e0500;
+  --color-on-tertiary-fixed-variant: #8d1600;
+
+  --color-surface: #e8fff0;
+  --color-surface-dim: #b8e4cc;
+  --color-surface-bright: #e8fff0;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #d1fee5;
+  --color-surface-container: #ccf8df;
+  --color-surface-container-high: #c6f2da;
+  --color-surface-container-highest: #c1ecd4;
+  --color-on-surface: #002114;
+  --color-on-surface-variant: #404943;
+  --color-surface-variant: #c1ecd4;
+  --color-surface-tint: #2c694e;
+  --color-inverse-surface: #0e3727;
+  --color-inverse-on-surface: #cffbe2;
+
+  --color-background: #e8fff0;
+  --color-on-background: #002114;
+
+  --color-outline: #707973;
+  --color-outline-variant: #bfc9c1;
+
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
+  --color-electric-blue: #3B82F6;
+  --color-shopee-orange: #EE4D2D;
+  --color-light-sage: #E8F5E2;
+  --color-deep-forest: #1B4332;
+
+  /* Typography */
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-accent: 'DM Sans', sans-serif;
+
+  /* Border radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-card: 0 2px 8px rgba(0,0,0,0.08);
+  --shadow-premium: 0 4px 16px rgba(0,0,0,0.12);
+
+  /* Spacing tokens */
+  --spacing-base: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 40px;
+  --spacing-xl: 64px;
+  --spacing-gutter: 20px;
+  --spacing-margin-mobile: 16px;
+  --spacing-margin-desktop: 80px;
+}
+
+/* Keyframe animations */
+@keyframes scan {
+  0% { top: 0%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-blue {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(59,130,246,0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(59,130,246,0); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-on-background);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Utility classes */
+.scan-line {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: rgba(59, 130, 246, 0.8);
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+  animation: scan 2s infinite linear;
+  z-index: 10;
+  top: 0;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.electric-glow {
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+}
+
+.card-shadow {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.animate-scan {
+  animation: scan 2s infinite linear;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 10s linear infinite;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Font utility classes */
+.font-display {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.font-accent {
+  font-family: 'DM Sans', sans-serif;
+}
+
