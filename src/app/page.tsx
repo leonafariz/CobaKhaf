@@ -2,8 +2,7 @@ import Link from "next/link";
 import { ScanFace, Sparkles, ShieldCheck, Leaf, ArrowRight, Quote } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
 import SectionHeading from "@/components/SectionHeading";
-import { getBestsellers } from "@/data/products";
-import { ingredients, blogPosts } from "@/data/content";
+import { getBestsellers, getIngredients, getBlogPosts } from "@/lib/dal";
 
 const HERO_IMG =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuC_y8advNDJfn0Fckr6wW7lWUoreBsnfcgGXgXGFunSete7sGDXCK86_mBGzyukzCJjF_mG6vjCNkAw96nSO9kA_lHaiYxf9iBIlXNuYyHSyrJvll1AYgefDibpDuGIHEQdq3XXEtGqkiH4zTIg2Sj1_mRIaBiJCG5wgWrjyBoQWk8BXgDO4nAtKSkL4rIvgdum1heL6Uyy1b0G7fpBomG7eolOsKkhr8X911wkjoBUQLnbXHjTslzFdS9LCrPof5a9aqIlzw-lbTA";
@@ -31,10 +30,15 @@ const testimonials = [
 
 const iconMap = { Sparkles, ShieldCheck, Leaf } as const;
 
-export default function Home() {
-  const bestsellers = getBestsellers().slice(0, 4);
-  const featuredIngredients = ingredients.slice(0, 4);
-  const latestPosts = blogPosts.slice(0, 3);
+export default async function Home() {
+  const [bestsellers, allIngredients, allPosts] = await Promise.all([
+    getBestsellers(),
+    getIngredients(),
+    getBlogPosts(),
+  ]);
+  const featuredIngredients = allIngredients.slice(0, 4);
+  const latestPosts = allPosts.slice(0, 3);
+  const topBestsellers = bestsellers.slice(0, 4);
 
   return (
     <>
@@ -136,7 +140,7 @@ export default function Home() {
           </Link>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
-          {bestsellers.map((p) => (
+          {topBestsellers.map((p) => (
             <ProductCard key={p.id} product={p} />
           ))}
         </div>

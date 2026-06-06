@@ -12,7 +12,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
-import { ingredients } from "@/data/content";
+import { getIngredients } from "@/lib/dal";
 
 export const metadata: Metadata = {
   title: "Kamus Bahan",
@@ -34,7 +34,8 @@ function getIcon(name: string): LucideIcon {
   return iconMap[name] ?? Sparkles;
 }
 
-export default function IngredientsPage() {
+export default async function IngredientsPage() {
+  const ingredients = await getIngredients();
   const featured = ingredients.slice(0, 3);
   const letters = Array.from(new Set(ingredients.map((i) => i.letter))).sort();
 

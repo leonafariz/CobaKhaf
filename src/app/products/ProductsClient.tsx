@@ -3,8 +3,7 @@
 import { useMemo, useState } from "react";
 import { SearchX } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
-import { products } from "@/data/products";
-import type { ProductCategory, SkinType, SkinConcern } from "@/lib/types";
+import type { Product, ProductCategory, SkinType, SkinConcern } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
 const categories: { value: ProductCategory | "all"; label: string }[] = [
@@ -16,7 +15,7 @@ const categories: { value: ProductCategory | "all"; label: string }[] = [
   { value: "fragrance", label: "Fragrance" },
 ];
 
-export default function ProductsClient() {
+export default function ProductsClient({ products }: { products: Product[] }) {
   const [category, setCategory] = useState<ProductCategory | "all">("all");
   const [skinType, setSkinType] = useState<SkinType | "">("");
   const [concern, setConcern] = useState<SkinConcern | "">("");
@@ -28,7 +27,7 @@ export default function ProductsClient() {
       if (concern && !p.skinConcerns.includes(concern)) return false;
       return true;
     });
-  }, [category, skinType, concern]);
+  }, [products, category, skinType, concern]);
 
   return (
     <>

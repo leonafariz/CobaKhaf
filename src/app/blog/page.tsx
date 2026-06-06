@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Clock, User } from "lucide-react";
-import { blogPosts } from "@/data/content";
+import { getBlogPosts } from "@/lib/dal";
 import SectionHeading from "@/components/SectionHeading";
 
 export const metadata: Metadata = {
@@ -10,7 +10,8 @@ export const metadata: Metadata = {
     "Wawasan, tips, dan panduan seputar perawatan kulit pria dari KAHF. Pelajari rutinitas, bahan aktif, dan kebiasaan skincare yang tepat.",
 };
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const blogPosts = await getBlogPosts();
   const [featured, ...rest] = blogPosts;
   const categories = Array.from(new Set(blogPosts.map((p) => p.category)));
 

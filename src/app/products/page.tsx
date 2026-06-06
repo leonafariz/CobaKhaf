@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ProductsClient from "./ProductsClient";
+import { getProducts } from "@/lib/dal";
 
 export const metadata: Metadata = {
   title: "Produk",
@@ -7,7 +8,8 @@ export const metadata: Metadata = {
     "Jelajahi katalog lengkap produk skincare halal KAHF — face wash, moisturizer, sunscreen, dan banyak lagi. Diformulasikan untuk pria modern.",
 };
 
-export default function ProductsPage() {
+export default async function ProductsPage() {
+  const products = await getProducts();
   return (
     <div className="pb-xl min-h-screen flex flex-col">
       <header className="max-w-7xl mx-auto w-full px-margin-mobile md:px-margin-desktop py-xl text-center">
@@ -19,7 +21,7 @@ export default function ProductsPage() {
           maskulinitas modern dan kemurnian.
         </p>
       </header>
-      <ProductsClient />
+      <ProductsClient products={products} />
     </div>
   );
 }

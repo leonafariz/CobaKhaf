@@ -14,7 +14,7 @@ import {
   Sprout,
   Star,
 } from "lucide-react";
-import { products, getProductBySlug } from "@/data/products";
+import { getAllProductSlugs, getProductBySlug, getProducts } from "@/lib/dal";
 import ProductCard from "@/components/ProductCard";
 import { shopeeLink } from "@/lib/utils";
 import type { LucideIcon } from "lucide-react";
@@ -29,8 +29,9 @@ const ICONS: Record<string, LucideIcon> = {
   Sprout,
 };
 
-export function generateStaticParams() {
-  return products.map((p) => ({ slug: p.slug }));
+export async function generateStaticParams() {
+  const slugs = await getAllProductSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -39,7 +40,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const product = getProductBySlug(slug);
+  const product = await getProductBySlug(slug);
   if (!product) return { title: "Produk tidak ditemukan" };
   return {
     title: product.name,
@@ -53,12 +54,12 @@ export default async function ProductDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const product = getProductBySlug(slug);
+  const [product, allProducts] = await Promise.all([getProductBySlug(slug), getProducts()]);
   if (!product) notFound();
 
   const primary = product.images.find((i) => i.isPrimary) ?? product.images[0];
   const companions = (product.companionProductSlugs ?? [])
-    .map((s) => getProductBySlug(s))
+    .map((s) => allProducts.find((p) => p.slug === s))
     .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
   return (

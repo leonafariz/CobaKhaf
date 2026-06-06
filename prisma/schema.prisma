@@ -1,0 +1,108 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Product {
+  id                    String              @id @default(cuid())
+  name                  String
+  slug                  String              @unique
+  tagline               String
+  shortDescription      String
+  description           String
+  category              String
+  categoryLabel         String
+  skinTypes             String[]
+  skinConcerns          String[]
+  shopeeLink            String
+  priceRange            String
+  rating                Float
+  reviewCount           Int
+  isBestseller          Boolean             @default(false)
+  badges                String[]
+  benefits              String[]
+  howToUse              String[]
+  companionProductSlugs String[]
+  images                ProductImage[]
+  ingredients           ProductIngredient[]
+  createdAt             DateTime            @default(now())
+  updatedAt             DateTime            @updatedAt
+}
+
+model ProductImage {
+  id        String  @id @default(cuid())
+  url       String
+  alt       String
+  isPrimary Boolean @default(false)
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  productId String
+}
+
+model ProductIngredient {
+  id        String  @id @default(cuid())
+  name      String
+  function  String
+  isKey     Boolean @default(true)
+  icon      String?
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  productId String
+}
+
+model BlogPost {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  excerpt     String
+  content     String
+  coverImage  String
+  coverAlt    String
+  authorName  String
+  category    String
+  tags        String[]
+  publishedAt String
+  readingTime String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Ingredient {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  letter      String
+  benefit     String
+  description String
+  foundIn     String[]
+  icon        String?
+}
+
+model StoreLocation {
+  id       String  @id @default(cuid())
+  name     String
+  type     String
+  address  String
+  city     String
+  province String
+  mapsUrl  String?
+  phone    String?
+  hours    String?
+}
+
+model OnlineStore {
+  id    String  @id @default(cuid())
+  name  String
+  url   String
+  color String?
+  icon  String?
+}
+
+model FaqItem {
+  id       String @id @default(cuid())
+  question String
+  answer   String
+  category String
+  order    Int    @default(0)
+}

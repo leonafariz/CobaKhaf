@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Clock, User, Calendar, ScanFace, ArrowRight } from "lucide-react";
-import { blogPosts, getPostBySlug } from "@/data/content";
+import { getAllPostSlugs, getBlogPosts, getPostBySlug } from "@/lib/dal";
 
-export function generateStaticParams() {
-  return blogPosts.map((p) => ({ slug: p.slug }));
+export async function generateStaticParams() {
+  const slugs = await getAllPostSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -14,7 +15,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
   if (!post) return { title: "Artikel tidak ditemukan" };
   return {
     title: post.title,
@@ -36,11 +37,11 @@ export default async function BlogDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const [post, allPosts] = await Promise.all([getPostBySlug(slug), getBlogPosts()]);
   if (!post) notFound();
 
   const paragraphs = post.content.split("\n\n");
-  const others = blogPosts.filter((p) => p.slug !== slug).slice(0, 2);
+  const others = allPosts.filter((p) => p.slug !== slug).slice(0, 2);
 
   return (
     <div className="max-w-7xl mx-auto w-full px-margin-mobile md:px-margin-desktop py-xl">

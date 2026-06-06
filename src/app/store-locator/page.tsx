@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { MapPin, ExternalLink, Store, Building2 } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
-import { storeLocations, onlineStores } from "@/data/content";
+import { getStoreLocations, getOnlineStores } from "@/lib/dal";
 
 export const metadata: Metadata = {
   title: "Store Locator",
@@ -15,7 +15,12 @@ const TYPE_LABEL: Record<string, string> = {
   online_only: "Online",
 };
 
-export default function StoreLocatorPage() {
+export default async function StoreLocatorPage() {
+  const [storeLocations, onlineStores] = await Promise.all([
+    getStoreLocations(),
+    getOnlineStores(),
+  ]);
+
   return (
     <div className="max-w-7xl mx-auto w-full px-margin-mobile md:px-margin-desktop py-xl">
       {/* Hero */}
@@ -70,15 +75,18 @@ export default function StoreLocatorPage() {
                 </p>
                 <p className="font-sans text-body-sm text-outline mb-sm">
                   {store.city}, {store.province}
+                  {store.hours && ` · ${store.hours}`}
                 </p>
-                <a
-                  href={store.mapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-xs text-primary font-semibold text-body-sm hover:opacity-80 transition-opacity"
-                >
-                  <MapPin size={16} /> Lihat di Peta
-                </a>
+                {store.mapsUrl && (
+                  <a
+                    href={store.mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-xs text-primary font-semibold text-body-sm hover:opacity-80 transition-opacity"
+                  >
+                    <MapPin size={16} /> Lihat di Peta
+                  </a>
+                )}
               </div>
             );
           })}

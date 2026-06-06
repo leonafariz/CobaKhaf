@@ -2,24 +2,24 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { faqItems } from "@/data/content";
+import type { FaqItem } from "@/lib/types";
 
-export default function FaqAccordion() {
+export default function FaqAccordion({ items }: { items: FaqItem[] }) {
   const [openKey, setOpenKey] = useState<string | null>(null);
 
-  const categories = Array.from(new Set(faqItems.map((f) => f.category)));
+  const categories = Array.from(new Set(items.map((f) => f.category)));
 
   return (
     <div className="space-y-xl">
       {categories.map((category) => {
-        const items = faqItems.filter((f) => f.category === category);
+        const categoryItems = items.filter((f) => f.category === category);
         return (
           <div key={category}>
             <h2 className="font-display text-headline-sm font-bold text-primary mb-md">
               {category}
             </h2>
             <div className="space-y-sm">
-              {items.map((item) => {
+              {categoryItems.map((item) => {
                 const key = `${category}-${item.question}`;
                 const isOpen = openKey === key;
                 return (

@@ -93,7 +93,9 @@ export interface StoreLocation {
   address: string;
   city: string;
   province: string;
-  mapsUrl: string;
+  mapsUrl?: string;
+  phone?: string;
+  hours?: string;
 }
 
 export interface FaqItem {
