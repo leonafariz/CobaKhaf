@@ -24,10 +24,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
-
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
@@ -94,6 +90,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
+                onClick={() => setMobileOpen(false)}
                 className={cn(
                   "py-2 font-sans text-body-md",
                   isActive(link.href)
@@ -106,6 +103,7 @@ export default function Navbar() {
             ))}
             <Link
               href="/ai-analysis"
+              onClick={() => setMobileOpen(false)}
               className="mt-xs px-md py-sm rounded-md bg-primary text-on-primary text-center font-semibold"
             >
               Cek Kulitmu Sekarang
