@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Face Analysis Shareable Card - KAHF</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&amp;family=Inter:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#e8fff0",
+                        "surface-variant": "#c1ecd4",
+                        "surface-container-low": "#d1fee5",
+                        "secondary-container": "#a1f4c8",
+                        "on-secondary-fixed": "#002113",
+                        "surface-dim": "#b8e4cc",
+                        "on-secondary-container": "#1b724f",
+                        "surface-container-high": "#c6f2da",
+                        "on-primary-fixed-variant": "#0e5138",
+                        "on-tertiary-fixed": "#3e0500",
+                        "tertiary-fixed": "#ffdad3",
+                        "secondary": "#116c4a",
+                        "on-tertiary-container": "#ffcfc5",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface": "#e8fff0",
+                        "primary": "#0f5238",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#002114",
+                        "tertiary": "#8e1700",
+                        "secondary-fixed-dim": "#86d7ad",
+                        "surface-tint": "#2c694e",
+                        "tertiary-container": "#b72607",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#95d4b3",
+                        "on-tertiary-fixed-variant": "#8d1600",
+                        "on-surface-variant": "#404943",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#ccf8df",
+                        "primary-container": "#2d6a4f",
+                        "secondary-fixed": "#a1f4c8",
+                        "outline-variant": "#bfc9c1",
+                        "outline": "#707973",
+                        "inverse-surface": "#0e3727",
+                        "surface-container-highest": "#c1ecd4",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb4a4",
+                        "inverse-on-surface": "#cffbe2",
+                        "primary-fixed": "#b1f0ce",
+                        "inverse-primary": "#95d4b3",
+                        "on-surface": "#002114",
+                        "background": "#e8fff0",
+                        "on-primary-container": "#a8e7c5",
+                        "on-background": "#002114",
+                        "electric-blue": "#3B82F6",
+                        "shopee-orange": "#EE4D2D",
+                        "deep-forest-10": "rgba(15, 82, 56, 0.1)"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "xs": "8px",
+                        "xl": "64px",
+                        "lg": "40px",
+                        "gutter": "20px",
+                        "base": "4px",
+                        "md": "24px",
+                        "sm": "16px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "accent-text": ["DM Sans"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "label-caps": ["DM Sans"],
+                        "display-lg-mobile": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "accent-text": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    },
+                    "boxShadow": {
+                        "premium": "0 2px 8px rgba(0,0,0,0.08)"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Modern Masculine Halal Aesthetic */
+        body {
+            background-color: #e8fff0; /* background */
+            color: #002114; /* on-background */
+        }
+        
+        .electric-glow {
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased min-h-screen flex flex-col">
+<!-- TopNavBar (Shared Component) -->
+<nav class="bg-surface/90 dark:bg-surface-container-highest/90 backdrop-blur-md fixed top-0 w-full z-50 shadow-sm transition-colors duration-200 ease-in-out">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center h-20">
+<div class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim tracking-tight">KAHF</div>
+<div class="hidden md:flex gap-md font-body-md text-body-md">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors hover:opacity-80" href="#">Products</a>
+<a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary dark:border-primary-fixed-dim pb-1 hover:opacity-80 transition-opacity" href="#">AI Face Analysis</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors hover:opacity-80" href="#">About</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors hover:opacity-80" href="#">Blog</a>
+</div>
+<div class="flex items-center gap-sm">
+<button class="font-accent-text text-accent-text text-primary dark:text-primary-fixed-dim hover:opacity-80 transition-opacity">Login</button>
+</div>
+</div>
+</nav>
+<!-- Main Content: AI Face Analysis Share Modal/Section -->
+<main class="flex-grow pt-24 pb-xl px-margin-mobile md:px-margin-desktop flex items-center justify-center">
+<!-- Modal Container / Section Wrapper -->
+<div class="w-full max-w-4xl bg-surface-container-lowest rounded-xl shadow-premium border border-surface-container flex flex-col md:flex-row overflow-hidden">
+<!-- Shareable Card (Instagram Story Format) -->
+<div class="w-full md:w-[400px] flex-shrink-0 bg-surface relative flex flex-col items-center p-md overflow-hidden" id="shareable-card">
+<!-- Subtle tech grid background pattern -->
+<div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: linear-gradient(#0f5238 1px, transparent 1px), linear-gradient(90deg, #0f5238 1px, transparent 1px); background-size: 20px 20px;"></div>
+<!-- Electric Blue Accent Gradient -->
+<div class="absolute top-0 left-0 w-full h-1 bg-electric-blue electric-glow z-10"></div>
+<!-- Header -->
+<div class="w-full flex justify-between items-center z-10 mb-lg">
+<span class="font-headline-sm text-headline-sm text-primary">KAHF</span>
+<span class="font-label-caps text-label-caps bg-surface-container-low text-primary px-sm py-1 rounded-full border border-electric-blue/30 text-electric-blue">AI SKIN ANALYSIS</span>
+</div>
+<!-- User Photo Area -->
+<div class="relative w-48 h-48 rounded-full border-4 border-surface-container-lowest shadow-premium mb-md overflow-hidden electric-glow z-10 group">
+<img alt="User face analysis" class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 transition-all duration-500" data-alt="A portrait of a modern, well-groomed man looking directly into the camera. The image has a slight clinical or scientific overlay, with subtle glowing blue scanning lines or dots suggesting an AI facial analysis is taking place. The background is a clean, bright white or light sage green (#E8F5E2) reflecting a masculine, premium skincare aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiv3jtSsKvW5sZek2fQsuaYUvg-CmfeU7RPL7hZLXgUMgPdZDY5utiK9fL_3NoiElSGvS4uLul4-yYR-sMQMrFAnXe9t_D9bxGi1irU3ydlwSW60op1jDrFndUGQs9ppD8EVl6NomKsHH_edid9cNLmRm3V2jSWj7cgbG3fLGLrFnkoZ5DoTYnvsGPBoZnl7Yk1i0lpGclNf80DSjXSwDLfUtoF9icu3-F36rrsTC4d1RvDdUDjvZNcCfmQ07pM8VOr_TfMqS4Ui8"/>
+<!-- Tech overlay circle -->
+<div class="absolute inset-0 border border-electric-blue/50 rounded-full animate-[spin_10s_linear_infinite] pointer-events-none border-dashed"></div>
+</div>
+<!-- Score & Type -->
+<div class="z-10 text-center mb-md w-full bg-surface-container-lowest p-sm rounded-lg shadow-sm border border-surface-container-low">
+<div class="flex justify-around items-center">
+<div class="text-center">
+<span class="block font-label-caps text-label-caps text-outline mb-1">SKIN HEALTH</span>
+<span class="block font-display-lg text-display-lg-mobile text-primary relative">
+                                85<span class="text-body-md text-on-surface-variant">/100</span>
+<span class="absolute -top-1 -right-4 w-2 h-2 bg-electric-blue rounded-full electric-glow animate-pulse"></span>
+</span>
+</div>
+<div class="w-px h-12 bg-deep-forest-10"></div>
+<div class="text-center">
+<span class="block font-label-caps text-label-caps text-outline mb-1">SKIN TYPE</span>
+<span class="block font-headline-md text-headline-md text-primary mt-1">Oily</span>
+</div>
+</div>
+</div>
+<!-- Recommended Products Mini-List -->
+<div class="w-full z-10 flex-grow flex flex-col mb-md">
+<span class="font-label-caps text-label-caps text-outline mb-sm text-center tracking-widest">YOUR REGIMEN</span>
+<div class="flex flex-col gap-xs">
+<!-- Product 1 -->
+<div class="flex items-center gap-sm bg-surface-container-lowest p-2 rounded-lg border border-surface-container-low">
+<div class="w-12 h-12 bg-surface-container rounded-md flex items-center justify-center overflow-hidden">
+<img alt="Facial Wash" class="object-cover h-full" data-alt="A small, premium dark green pump bottle of men's facial cleanser, minimalist design, sitting on a clean white surface with bright, high-key lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmpW_f-o9aO9HGJvHcpOt1n2swv9Ji2lQ_I_Rz-znHlS_FJiubPNjR7c0KpvU4idRnN1ilvydZbc-d_6NlGr5q4dR567KOTFdoiEkmy0pk5ms5LFt2BngqGrLAPIDGZO-jI3iUy14klD6_VTGzMQGyCvvQ_YAtS2LyG5s9E07U_-D4LItQvmqrzAlRHGyImrRaTUPboTviZ2NuavAIK4jZuHPshjFdCxjv8yfes_gjzce1fOZCxY9RntMzWhYCiD0ANhZAy7-1Fa8"/>
+</div>
+<div class="flex-grow">
+<span class="block font-accent-text text-accent-text text-on-surface leading-tight">Oil and Acne Care</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant text-[10px]">Face Wash</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[16px]">check_circle</span>
+</div>
+<!-- Product 2 -->
+<div class="flex items-center gap-sm bg-surface-container-lowest p-2 rounded-lg border border-surface-container-low">
+<div class="w-12 h-12 bg-surface-container rounded-md flex items-center justify-center overflow-hidden">
+<img alt="Serum" class="object-cover h-full" data-alt="A small, premium dark green pump bottle of men's facial cleanser, minimalist design, sitting on a clean white surface with bright, high-key lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1wrcqQiRMB_NDb4Jy6qw-dOpFvgRwiXFIDiekEwHpgbO3V_3T7DjWvBGP2UJN_wt2F1YHniSXxzeCnlMbI3XNrmmy7O0KVVrR1Jz5U5V_hZoU4F-3GYSZy21Rq7trCAQ7t-_rQLpVBq_GG9cHvJg-TytHjKCzLCAgWIYJYO35-wrVYfmjnZRDXS6VLHPTToxmaFvIJqiVSThKm3rdYzmi651hpU4sF2zolJTZ2zZGYdkjMOTer4MT5wPZPlGP6ZSH99AN0w9sQq0"/>
+</div>
+<div class="flex-grow">
+<span class="block font-accent-text text-accent-text text-on-surface leading-tight">Triple Protection</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant text-[10px]">Sunscreen</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[16px]">check_circle</span>
+</div>
+</div>
+</div>
+<!-- Footer area of card (QR & URL) -->
+<div class="w-full z-10 flex items-center justify-between mt-auto pt-sm border-t border-deep-forest-10">
+<div class="flex flex-col">
+<span class="font-accent-text text-accent-text text-[10px] text-on-surface-variant">Analyze your skin at</span>
+<span class="font-headline-sm text-[12px] text-primary">kahfeveryday.com/ai</span>
+</div>
+<!-- Mock QR Code -->
+<div class="w-12 h-12 bg-white p-1 rounded-sm border border-surface-container-low">
+<img alt="QR Code" class="w-full h-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVll85sGiKMz4bzTi6qat-jhqn9_jLmxiXESq6diSqmxZ03XhWr_thAwDVuGWYbGYtNdguxigaXiSMw_2MFfbNhJcf1OLuR0pni_bhaE2E20UtczAnIowx6MCAry1RxHujNpeb05ZwZtU9HLDsO9eARzKowi_Yq45TfX4L75N9A6Q4pFTOIfJbobDRFplS5-OHBlYyzEMSrflqJotaw63J2YyacyF8mVNZYoiZDlKZpNbsJ_kCkgFsbv8AfnmjUu7EDViff_RjLGk"/>
+</div>
+</div>
+</div>
+<!-- Actions & Context Panel -->
+<div class="flex-grow p-lg flex flex-col justify-center bg-surface-container-lowest">
+<div class="mb-lg">
+<h2 class="font-display-lg text-display-lg-mobile md:text-[36px] md:leading-[44px] text-primary mb-sm">Share Your Results</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md max-w-md">Your skin health score is ready. Share your personalized AI analysis with friends or save it to your device to track your progress.</p>
+</div>
+<!-- Primary Actions -->
+<div class="flex flex-col gap-sm max-w-sm mb-xl">
+<!-- Instagram Share (Using standard color for brand recognition, wrapped in our aesthetic) -->
+<button class="w-full flex items-center justify-center gap-sm py-3 px-md bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] rounded-lg text-white font-accent-text text-accent-text hover:opacity-90 transition-opacity shadow-sm">
+<span>Share to Instagram Story</span>
+</button>
+<!-- WhatsApp Share -->
+<button class="w-full flex items-center justify-center gap-sm py-3 px-md bg-[#25D366] rounded-lg text-white font-accent-text text-accent-text hover:opacity-90 transition-opacity shadow-sm">
+<span>Send via WhatsApp</span>
+</button>
+<!-- Download/Save -->
+<button class="w-full flex items-center justify-center gap-sm py-3 px-md bg-transparent border border-primary rounded-lg text-primary font-accent-text text-accent-text hover:bg-surface-bright transition-colors mt-sm">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span>Save to Camera Roll</span>
+</button>
+</div>
+<!-- Quick Cart Action -->
+<div class="bg-surface-bright p-md rounded-lg border border-surface-container max-w-sm">
+<p class="font-accent-text text-accent-text text-on-surface mb-sm">Ready to start your routine?</p>
+<button class="w-full flex items-center justify-center gap-sm py-3 px-md bg-shopee-orange rounded-lg text-white font-accent-text text-accent-text hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+<span>Add Regimen to Cart</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface w-full">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-xl grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="col-span-1">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed-dim mb-sm">KAHF</div>
+<p class="font-body-sm text-body-sm text-on-surface dark:text-inverse-on-surface mb-md">© 2024 KAHF. Modern Masculine Halal Skincare.</p>
+</div>
+<div class="col-span-1 md:col-span-3 flex flex-wrap gap-md font-body-sm text-body-sm">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Products</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Routine Builder</a>
+<a class="text-primary dark:text-primary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">AI Skin Analysis</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">FAQ</a>
+</div>
+</div>
+</footer>
+</body></html>

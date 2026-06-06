@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Face Analysis - KAHF</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&amp;family=Inter:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#0f5238",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#404943",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#95d4b3",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#86d7ad",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#a8e7c5",
+                        "primary-container": "#2d6a4f",
+                        "inverse-surface": "#0e3727",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#1b724f",
+                        "on-secondary-fixed": "#002113",
+                        "surface-container-low": "#d1fee5",
+                        "surface": "#e8fff0",
+                        "background": "#e8fff0",
+                        "inverse-primary": "#95d4b3",
+                        "inverse-on-surface": "#cffbe2",
+                        "surface-bright": "#e8fff0",
+                        "surface-container-high": "#c6f2da",
+                        "on-tertiary-fixed": "#3e0500",
+                        "secondary": "#116c4a",
+                        "on-surface": "#002114",
+                        "outline": "#707973",
+                        "surface-dim": "#b8e4cc",
+                        "primary-fixed": "#b1f0ce",
+                        "secondary-fixed": "#a1f4c8",
+                        "surface-container": "#ccf8df",
+                        "on-background": "#002114",
+                        "tertiary-container": "#b72607",
+                        "secondary-container": "#a1f4c8",
+                        "on-tertiary-container": "#ffcfc5",
+                        "on-tertiary-fixed-variant": "#8d1600",
+                        "surface-container-highest": "#c1ecd4",
+                        "surface-variant": "#c1ecd4",
+                        "on-primary-fixed-variant": "#0e5138",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#002114",
+                        "tertiary": "#8e1700",
+                        "tertiary-fixed": "#ffdad3",
+                        "outline-variant": "#bfc9c1",
+                        "tertiary-fixed-dim": "#ffb4a4",
+                        "surface-tint": "#2c694e",
+                        "electric-blue": "#3B82F6",
+                        "shopee-orange": "#ee4d2d",
+                        "light-sage": "#E8F5E2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "64px",
+                        "sm": "16px",
+                        "gutter": "20px",
+                        "margin-desktop": "80px",
+                        "base": "4px",
+                        "margin-mobile": "16px",
+                        "md": "24px",
+                        "xs": "8px",
+                        "lg": "40px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["DM Sans"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "accent-text": ["DM Sans"],
+                        "display-lg-mobile": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "accent-text": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Scan Line Animation */
+        @keyframes scan {
+            0% { top: 0%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        .scan-line {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: rgba(59, 130, 246, 0.8);
+            box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+            animation: scan 2s infinite linear;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col pt-20">
+<!-- TopNavBar -->
+<nav class="bg-surface/90 dark:bg-surface-container-highest/90 backdrop-blur-md fixed top-0 w-full z-50 shadow-sm">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center h-20">
+<a class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim tracking-tight" href="#">KAHF</a>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#">Products</a>
+<a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary dark:border-primary-fixed-dim pb-1 duration-200 ease-in-out font-body-md text-body-md" href="#">AI Face Analysis</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#">About</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#">Blog</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary hidden md:block cursor-pointer">search</span>
+<button class="bg-primary text-on-primary font-body-md font-semibold py-2 px-6 rounded-lg hover:opacity-80 transition-opacity">Login</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop w-full py-xl space-y-xl">
+<!-- Hero & Steps Section -->
+<section class="text-center max-w-3xl mx-auto space-y-md">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary tracking-tight">Pahami Kulitmu dalam 5 Detik</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Analisis kulit wajah berteknologi AI untuk rutinitas perawatan pria yang tepat.</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-sm mt-lg">
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08)] text-center">
+<div class="w-12 h-12 rounded-full bg-light-sage text-primary flex items-center justify-center mx-auto mb-xs">
+<span class="font-headline-sm text-headline-sm">1</span>
+</div>
+<h3 class="font-accent-text text-accent-text text-primary mb-1">Ambil Foto</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Gunakan kamera atau unggah foto wajah tanpa makeup.</p>
+</div>
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08)] text-center">
+<div class="w-12 h-12 rounded-full bg-light-sage text-primary flex items-center justify-center mx-auto mb-xs">
+<span class="font-headline-sm text-headline-sm">2</span>
+</div>
+<h3 class="font-accent-text text-accent-text text-primary mb-1">AI Menganalisis</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sistem membaca tekstur, minyak, dan kondisi kulit.</p>
+</div>
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08)] text-center">
+<div class="w-12 h-12 rounded-full bg-light-sage text-primary flex items-center justify-center mx-auto mb-xs">
+<span class="font-headline-sm text-headline-sm">3</span>
+</div>
+<h3 class="font-accent-text text-accent-text text-primary mb-1">Dapatkan Solusi</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Rekomendasi produk KAHF yang diformulasikan khusus.</p>
+</div>
+</div>
+</section>
+<!-- Input Area (Camera / Upload) -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-md max-w-4xl mx-auto">
+<button class="bg-surface-container-lowest border border-light-sage rounded-xl p-xl flex flex-col items-center justify-center hover:border-primary hover:shadow-[0_2px_8px_rgba(0,0,0,0.08)] transition-all group">
+<span class="material-symbols-outlined text-4xl text-electric-blue mb-sm group-hover:scale-110 transition-transform">photo_camera</span>
+<span class="font-headline-sm text-headline-sm text-primary mb-2">Gunakan Kamera</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Pindai wajah secara langsung</span>
+</button>
+<button class="bg-surface-container-lowest border border-light-sage rounded-xl p-xl flex flex-col items-center justify-center hover:border-primary hover:shadow-[0_2px_8px_rgba(0,0,0,0.08)] transition-all group">
+<span class="material-symbols-outlined text-4xl text-primary mb-sm group-hover:scale-110 transition-transform">upload_file</span>
+<span class="font-headline-sm text-headline-sm text-primary mb-2">Unggah Foto</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Pilih foto dari galeri Anda</span>
+</button>
+</section>
+<!-- Interactive AI Scanner Mockup -->
+<section class="max-w-2xl mx-auto bg-surface-container-lowest rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08)] overflow-hidden border border-light-sage relative">
+<div class="h-[400px] w-full bg-surface-variant relative overflow-hidden flex items-center justify-center">
+<!-- Mock image - replace data-alt with strict requirements -->
+<img class="absolute inset-0 w-full h-full object-cover opacity-80" data-alt="A close-up portrait of a masculine man with clear, healthy skin in a brightly lit modern studio. The lighting is soft and clinical, highlighting the texture of his face. Overlaying the image is a subtle digital aesthetic with clean, professional corporate modern styling. The color palette features light sage greens and crisp whites, emphasizing a premium skincare context. The overall mood is serious, scientific, and refined." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkLXyeMRGAEzE8w1A35_t1hOogS6aBKn2C1rSAJx_hFMkDRBz4AJJr9Br7641K4vttm5vTs5zHvlvkSGaP-WNpli1KK3M6S6eYS1cuYBHOg9imZlgJdRlhTPfGadtXfKOqSptDEHu-whabIQwDQV8eetoVOGkRTtoUdAeHsqYfeaFTZsk5G0_l2gUenRTb4k9vhgq4NUh6MY5JNGhiDYqczBzjC9Zzdc03C9egaH7j_iAM6Fpx8b7RZucd_5NaEQy31_NGq2NtbKs"/>
+<!-- Scanning Overlay Elements -->
+<div class="absolute inset-0 border-2 border-electric-blue/30 rounded-lg m-md pointer-events-none"></div>
+<div class="scan-line"></div>
+<!-- Corner brackets -->
+<div class="absolute top-md left-md w-8 h-8 border-t-2 border-l-2 border-electric-blue"></div>
+<div class="absolute top-md right-md w-8 h-8 border-t-2 border-r-2 border-electric-blue"></div>
+<div class="absolute bottom-md left-md w-8 h-8 border-b-2 border-l-2 border-electric-blue"></div>
+<div class="absolute bottom-md right-md w-8 h-8 border-b-2 border-r-2 border-electric-blue"></div>
+<!-- UI Feedback Overlay -->
+<div class="absolute bottom-md left-1/2 -translate-x-1/2 bg-surface-container-lowest/90 backdrop-blur-sm py-2 px-4 rounded-full border border-electric-blue/20 shadow-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-electric-blue animate-pulse text-sm">memory</span>
+<span class="font-body-sm text-body-sm text-primary font-medium">Menganalisis tekstur kulit...</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface w-full mt-xl">
+<div class="max-w-7xl mx-auto px-margin-desktop py-xl grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div>
+<span class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed-dim block mb-4">KAHF</span>
+<p class="text-on-surface dark:text-inverse-on-surface font-body-sm text-body-sm">© 2024 KAHF. Modern Masculine Halal Skincare.</p>
+</div>
+<div class="flex flex-col space-y-2">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors font-body-sm text-body-sm" href="#">Products</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors font-body-sm text-body-sm" href="#">Routine Builder</a>
+</div>
+<div class="flex flex-col space-y-2">
+<a class="text-primary dark:text-primary-fixed-dim font-body-sm text-body-sm" href="#">AI Skin Analysis</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors font-body-sm text-body-sm" href="#">FAQ</a>
+</div>
+<div class="flex flex-col space-y-2">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors font-body-sm text-body-sm" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors font-body-sm text-body-sm" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</body></html>

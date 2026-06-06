@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KAHF Ingredients Dictionary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Inter:wght@400;500;600&amp;family=DM+Sans:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#ffdad3",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#707973",
+                        "on-tertiary-fixed-variant": "#8d1600",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#c1ecd4",
+                        "surface-container-low": "#d1fee5",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#ffcfc5",
+                        "on-tertiary-fixed": "#3e0500",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#002113",
+                        "surface-variant": "#c1ecd4",
+                        "tertiary": "#8e1700",
+                        "primary-fixed": "#b1f0ce",
+                        "primary": "#0f5238",
+                        "on-primary-fixed": "#002114",
+                        "tertiary-fixed-dim": "#ffb4a4",
+                        "on-background": "#002114",
+                        "inverse-primary": "#95d4b3",
+                        "surface-bright": "#e8fff0",
+                        "on-primary-fixed-variant": "#0e5138",
+                        "surface-container": "#ccf8df",
+                        "secondary-fixed": "#a1f4c8",
+                        "inverse-on-surface": "#cffbe2",
+                        "primary-fixed-dim": "#95d4b3",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#a8e7c5",
+                        "secondary-fixed-dim": "#86d7ad",
+                        "inverse-surface": "#0e3727",
+                        "on-surface": "#002114",
+                        "secondary-container": "#a1f4c8",
+                        "on-surface-variant": "#404943",
+                        "surface": "#e8fff0",
+                        "primary-container": "#2d6a4f",
+                        "on-secondary-fixed-variant": "#005236",
+                        "tertiary-container": "#b72607",
+                        "surface-tint": "#2c694e",
+                        "surface-container-high": "#c6f2da",
+                        "on-secondary-container": "#1b724f",
+                        "background": "#e8fff0",
+                        "surface-dim": "#b8e4cc",
+                        "on-error-container": "#93000a",
+                        "secondary": "#116c4a",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#bfc9c1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "40px",
+                        "base": "4px",
+                        "md": "24px",
+                        "xs": "8px",
+                        "gutter": "20px",
+                        "margin-desktop": "80px",
+                        "margin-mobile": "16px",
+                        "xl": "64px",
+                        "sm": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "label-caps": ["DM Sans"],
+                        "body-md": ["Inter"],
+                        "accent-text": ["DM Sans"],
+                        "display-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "accent-text": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .custom-shadow { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(232, 245, 226, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface-container-highest/90 backdrop-blur-md shadow-sm border-b-0 border-transparent">
+<nav class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center h-20">
+<div class="flex items-center gap-md">
+<a class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim tracking-tight" href="#">KAHF</a>
+<div class="hidden md:flex gap-md ml-lg">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors font-body-md text-body-md duration-200 ease-in-out" href="#">Products</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors font-body-md text-body-md duration-200 ease-in-out" href="#">AI Face Analysis</a>
+<a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary dark:border-primary-fixed-dim pb-1 font-body-md text-body-md duration-200 ease-in-out" href="#">About</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors font-body-md text-body-md duration-200 ease-in-out" href="#">Blog</a>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<!-- Search Icon for Mobile -->
+<button class="md:hidden p-2 text-on-surface hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">search</span>
+</button>
+<a class="hidden md:block hover:opacity-80 transition-opacity font-body-md text-body-md font-semibold text-primary" href="#">Login</a>
+</div>
+</nav>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[100px] pb-xl px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto w-full">
+<!-- Header Section -->
+<section class="text-center mb-xl max-w-3xl mx-auto">
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary mb-sm">Ingredients Dictionary</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg">Explore the science and nature behind our modern masculine formulations. Clinically proven, naturally derived.</p>
+<!-- Search Bar -->
+<div class="relative max-w-xl mx-auto">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-[48px] pr-sm py-[14px] bg-surface-container-lowest border border-surface-container-high rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all font-body-md text-on-surface placeholder:text-outline" placeholder="Search ingredients (e.g., Mediterranean Sage)..." type="text"/>
+</div>
+</section>
+<!-- A-Z Navigation -->
+<section class="mb-lg overflow-x-auto pb-sm scrollbar-hide">
+<div class="flex md:justify-center min-w-max gap-xs px-sm md:px-0">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-on-primary font-accent-text text-accent-text transition-colors">A</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors font-accent-text text-accent-text custom-shadow">B</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors font-accent-text text-accent-text custom-shadow">C</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors font-accent-text text-accent-text custom-shadow text-outline-variant cursor-not-allowed">D</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors font-accent-text text-accent-text custom-shadow">E</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors font-accent-text text-accent-text custom-shadow text-outline-variant cursor-not-allowed">F</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors font-accent-text text-accent-text custom-shadow">G</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors font-accent-text text-accent-text custom-shadow text-outline-variant cursor-not-allowed">H</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors font-accent-text text-accent-text custom-shadow text-outline-variant cursor-not-allowed">I</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors font-accent-text text-accent-text custom-shadow text-outline-variant cursor-not-allowed">J</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors font-accent-text text-accent-text custom-shadow text-outline-variant cursor-not-allowed">K</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors font-accent-text text-accent-text custom-shadow text-outline-variant cursor-not-allowed">L</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors font-accent-text text-accent-text custom-shadow">M</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors font-accent-text text-accent-text custom-shadow text-outline-variant cursor-not-allowed">N</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors font-accent-text text-accent-text custom-shadow text-outline-variant cursor-not-allowed">O</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors font-accent-text text-accent-text custom-shadow">P</button>
+</div>
+</section>
+<!-- Bento Grid for Ingredients -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+<!-- Ingredient Card 1 -->
+<article class="bg-surface-container-lowest rounded-xl p-md custom-shadow hover:shadow-md transition-shadow flex flex-col h-full border border-surface-container-highest/30">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-headline-sm text-headline-sm text-primary">Aloe Vera Extract</h3>
+<span class="inline-block px-2 py-1 bg-surface-container-high text-primary-container font-label-caps text-label-caps rounded uppercase tracking-wider">Soothing</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex-grow mb-md">Deeply hydrates and calms irritated skin. Known for its cooling properties and ability to accelerate skin barrier recovery post-shave.</p>
+<div class="mt-auto border-t border-surface-container-high pt-sm">
+<span class="block font-label-caps text-label-caps text-outline mb-xs">Found In</span>
+<div class="flex flex-wrap gap-xs">
+<span class="text-[11px] font-medium px-2 py-1 bg-surface rounded-md text-on-surface-variant border border-surface-container">Soothing Face Wash</span>
+<span class="text-[11px] font-medium px-2 py-1 bg-surface rounded-md text-on-surface-variant border border-surface-container">Aftershave Balm</span>
+</div>
+</div>
+</article>
+<!-- Ingredient Card 2 -->
+<article class="bg-surface-container-lowest rounded-xl p-md custom-shadow hover:shadow-md transition-shadow flex flex-col h-full border border-surface-container-highest/30 relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-container-low to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative z-10 flex flex-col h-full">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-headline-sm text-headline-sm text-primary">Charcoal Powder</h3>
+<span class="inline-block px-2 py-1 bg-surface-container-high text-primary-container font-label-caps text-label-caps rounded uppercase tracking-wider">Purifying</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex-grow mb-md">Acts as a magnet to draw out dirt, oil, and impurities from deep within the pores. Essential for a deep cleanse and maintaining a matte finish.</p>
+<div class="mt-auto border-t border-surface-container-high pt-sm">
+<span class="block font-label-caps text-label-caps text-outline mb-xs">Found In</span>
+<div class="flex flex-wrap gap-xs">
+<span class="text-[11px] font-medium px-2 py-1 bg-surface rounded-md text-on-surface-variant border border-surface-container">Oil and Acne Care</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Ingredient Card 3 -->
+<article class="bg-surface-container-lowest rounded-xl p-md custom-shadow hover:shadow-md transition-shadow flex flex-col h-full border border-surface-container-highest/30">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-headline-sm text-headline-sm text-primary">Mediterranean Sage</h3>
+<span class="inline-block px-2 py-1 bg-surface-container-high text-primary-container font-label-caps text-label-caps rounded uppercase tracking-wider">Oil Control</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex-grow mb-md">A potent botanical extract that regulates sebum production and tightens pores, offering long-lasting shine control without stripping the skin.</p>
+<div class="mt-auto border-t border-surface-container-high pt-sm">
+<span class="block font-label-caps text-label-caps text-outline mb-xs">Found In</span>
+<div class="flex flex-wrap gap-xs">
+<span class="text-[11px] font-medium px-2 py-1 bg-surface rounded-md text-on-surface-variant border border-surface-container">Oil and Acne Care Face Wash</span>
+<span class="text-[11px] font-medium px-2 py-1 bg-surface rounded-md text-on-surface-variant border border-surface-container">Matte Moisturizer</span>
+</div>
+</div>
+</article>
+<!-- Ingredient Card 4 -->
+<article class="bg-surface-container-lowest rounded-xl p-md custom-shadow hover:shadow-md transition-shadow flex flex-col h-full border border-surface-container-highest/30">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-headline-sm text-headline-sm text-primary">Moroccan Mint</h3>
+<span class="inline-block px-2 py-1 bg-surface-container-high text-primary-container font-label-caps text-label-caps rounded uppercase tracking-wider">Energizing</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex-grow mb-md">Delivers an immediate cooling sensation and invigorates dull skin. Rich in antioxidants to protect against environmental stressors.</p>
+<div class="mt-auto border-t border-surface-container-high pt-sm">
+<span class="block font-label-caps text-label-caps text-outline mb-xs">Found In</span>
+<div class="flex flex-wrap gap-xs">
+<span class="text-[11px] font-medium px-2 py-1 bg-surface rounded-md text-on-surface-variant border border-surface-container">Energizing Face Wash</span>
+<span class="text-[11px] font-medium px-2 py-1 bg-surface rounded-md text-on-surface-variant border border-surface-container">Body Wash</span>
+</div>
+</div>
+</article>
+<!-- AI Insight Highlight Card (Asymmetric) -->
+<article class="bg-[#e8f0fe] rounded-xl p-md custom-shadow flex flex-col h-full border border-[#3B82F6]/20 relative overflow-hidden md:col-span-2 lg:col-span-1 lg:row-span-2">
+<div class="absolute top-0 right-0 w-32 h-32 bg-[#3B82F6]/5 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
+<div class="flex items-center gap-2 mb-sm text-[#3B82F6]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">neurology</span>
+<span class="font-label-caps text-label-caps tracking-widest uppercase">AI Routine Builder</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-sm">Unsure which ingredients your skin needs?</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-md flex-grow">Our AI Skin Analyzer evaluates your complexion in seconds to recommend the exact formulations and active ingredients tailored for your unique profile.</p>
+<button class="w-full py-3 px-4 bg-[#3B82F6] text-white rounded-lg font-accent-text text-accent-text flex items-center justify-center gap-2 hover:bg-[#2563EB] transition-colors mt-auto">
+                    Analyze My Skin
+                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</article>
+<!-- Ingredient Card 5 -->
+<article class="bg-surface-container-lowest rounded-xl p-md custom-shadow hover:shadow-md transition-shadow flex flex-col h-full border border-surface-container-highest/30">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-headline-sm text-headline-sm text-primary">Niacinamide</h3>
+<span class="inline-block px-2 py-1 bg-surface-container-high text-primary-container font-label-caps text-label-caps rounded uppercase tracking-wider">Brightening</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex-grow mb-md">A versatile Vitamin B3 derivative that visibly minimizes enlarged pores, improves uneven skin tone, softens fine lines, and strengthens the skin surface.</p>
+<div class="mt-auto border-t border-surface-container-high pt-sm">
+<span class="block font-label-caps text-label-caps text-outline mb-xs">Found In</span>
+<div class="flex flex-wrap gap-xs">
+<span class="text-[11px] font-medium px-2 py-1 bg-surface rounded-md text-on-surface-variant border border-surface-container">Brightening Serum</span>
+<span class="text-[11px] font-medium px-2 py-1 bg-surface rounded-md text-on-surface-variant border border-surface-container">Daily Moisturizer</span>
+</div>
+</div>
+</article>
+<!-- Ingredient Card 6 -->
+<article class="bg-surface-container-lowest rounded-xl p-md custom-shadow hover:shadow-md transition-shadow flex flex-col h-full border border-surface-container-highest/30">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-headline-sm text-headline-sm text-primary">Salicylic Acid (BHA)</h3>
+<span class="inline-block px-2 py-1 bg-surface-container-high text-primary-container font-label-caps text-label-caps rounded uppercase tracking-wider">Exfoliating</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex-grow mb-md">An oil-soluble exfoliant that penetrates deep into pores to dissolve dead skin cells and excess sebum. Highly effective for acne-prone skin.</p>
+<div class="mt-auto border-t border-surface-container-high pt-sm">
+<span class="block font-label-caps text-label-caps text-outline mb-xs">Found In</span>
+<div class="flex flex-wrap gap-xs">
+<span class="text-[11px] font-medium px-2 py-1 bg-surface rounded-md text-on-surface-variant border border-surface-container">Oil and Acne Care Face Wash</span>
+<span class="text-[11px] font-medium px-2 py-1 bg-surface rounded-md text-on-surface-variant border border-surface-container">Spot Treatment</span>
+</div>
+</div>
+</article>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-highest dark:bg-inverse-surface mt-auto">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-xl grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<!-- Brand & Copyright -->
+<div class="md:col-span-1 mb-lg md:mb-0">
+<h2 class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed-dim mb-sm">KAHF</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline-variant">
+                    © 2024 KAHF. Modern Masculine Halal Skincare.
+                </p>
+</div>
+<!-- Navigation Links -->
+<div class="md:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-sm">
+<div class="flex flex-col gap-xs">
+<a class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Products</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Routine Builder</a>
+</div>
+<div class="flex flex-col gap-xs">
+<a class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">AI Skin Analysis</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Privacy Policy</a>
+</div>
+<div class="flex flex-col gap-xs mt-sm md:mt-0">
+<a class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">FAQ</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KAHF - Skincare Halal untuk Pria</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&amp;family=Inter:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#0f5238",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#404943",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#95d4b3",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#86d7ad",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#a8e7c5",
+                        "primary-container": "#2d6a4f",
+                        "inverse-surface": "#0e3727",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#1b724f",
+                        "on-secondary-fixed": "#002113",
+                        "surface-container-low": "#d1fee5",
+                        "surface": "#e8fff0",
+                        "background": "#e8fff0",
+                        "inverse-primary": "#95d4b3",
+                        "inverse-on-surface": "#cffbe2",
+                        "surface-bright": "#e8fff0",
+                        "surface-container-high": "#c6f2da",
+                        "on-tertiary-fixed": "#3e0500",
+                        "secondary": "#116c4a",
+                        "on-surface": "#002114",
+                        "outline": "#707973",
+                        "surface-dim": "#b8e4cc",
+                        "primary-fixed": "#b1f0ce",
+                        "secondary-fixed": "#a1f4c8",
+                        "surface-container": "#ccf8df",
+                        "on-background": "#002114",
+                        "tertiary-container": "#b72607",
+                        "secondary-container": "#a1f4c8",
+                        "on-tertiary-container": "#ffcfc5",
+                        "on-tertiary-fixed-variant": "#8d1600",
+                        "surface-container-highest": "#c1ecd4",
+                        "surface-variant": "#c1ecd4",
+                        "on-primary-fixed-variant": "#0e5138",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#002114",
+                        "tertiary": "#8e1700",
+                        "tertiary-fixed": "#ffdad3",
+                        "outline-variant": "#bfc9c1",
+                        "tertiary-fixed-dim": "#ffb4a4",
+                        "surface-tint": "#2c694e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "64px",
+                        "sm": "16px",
+                        "gutter": "20px",
+                        "margin-desktop": "80px",
+                        "base": "4px",
+                        "margin-mobile": "16px",
+                        "md": "24px",
+                        "xs": "8px",
+                        "lg": "40px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["DM Sans"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "accent-text": ["DM Sans"],
+                        "display-lg-mobile": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "accent-text": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface-container-highest/90 backdrop-blur-md shadow-sm transition-all duration-200 ease-in-out" id="navbar">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center h-20">
+<a class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim tracking-tight" href="#">
+                KAHF
+            </a>
+<div class="hidden md:flex items-center gap-md">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors hover:opacity-80 transition-opacity" href="#">Products</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors hover:opacity-80 transition-opacity" href="#">AI Face Analysis</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors hover:opacity-80 transition-opacity" href="#">About</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors hover:opacity-80 transition-opacity" href="#">Blog</a>
+</div>
+<div class="flex items-center gap-sm">
+<button class="hidden md:block px-md py-xs rounded-lg border border-primary text-primary hover:bg-primary/5 transition-colors font-body-md text-body-md">
+                    Login
+                </button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-[921px] flex items-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Hero background" class="w-full h-full object-cover object-center" data-alt="A cinematic, high-fashion portrait of a modern man applying skincare in a bright, minimalist bathroom. The lighting is soft and natural, emphasizing clean, healthy skin. The overall aesthetic is 'Modern Masculine' with subtle deep green accents and pristine white surroundings. The mood is calm, confident, and expertly formulated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_y8advNDJfn0Fckr6wW7lWUoreBsnfcgGXgXGFunSete7sGDXCK86_mBGzyukzCJjF_mG6vjCNkAw96nSO9kA_lHaiYxf9iBIlXNuYyHSyrJvll1AYgefDibpDuGIHEQdq3XXEtGqkiH4zTIg2Sj1_mRIaBiJCG5wgWrjyBoQWk8BXgDO4nAtKSkL4rIvgdum1heL6Uyy1b0G7fpBomG7eolOsKkhr8X911wkjoBUQLnbXHjTslzFdS9LCrPof5a9aqIlzw-lbTA"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface/95 via-surface/80 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop w-full">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-xs px-sm py-xs rounded-full bg-surface-container-high text-primary mb-md">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider">Halal &amp; Clean Beauty</span>
+</div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-md">
+                    Skincare Halal, Clean, dan Efektif untuk Pria
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg max-w-lg">
+                    Rangkaian perawatan kulit yang diformulasikan khusus untuk pria modern, menyeimbangkan nilai-nilai Islami dengan kemanjuran ilmiah.
+                </p>
+<div class="flex flex-col sm:flex-row gap-sm">
+<button class="px-md py-sm rounded-lg bg-primary text-on-primary font-body-md text-body-md font-semibold hover:bg-primary/90 transition-colors flex items-center justify-center gap-xs shadow-[0_2px_8px_rgba(0,0,0,0.08)]">
+<span class="material-symbols-outlined text-[#3B82F6] drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]">face</span>
+                        Cek Kondisi Kulitmu
+                    </button>
+<button class="px-md py-sm rounded-lg border border-primary text-primary hover:bg-primary/5 transition-colors font-body-md text-body-md font-semibold flex items-center justify-center gap-xs">
+                        Lihat Produk
+                    </button>
+</div>
+</div>
+</div>
+</header>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface mt-xl">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-xl grid grid-cols-1 md:grid-cols-4 gap-gutter w-full">
+<div class="col-span-1 md:col-span-2">
+<span class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed-dim block mb-sm">KAHF</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline-variant max-w-sm mb-md">
+                    Modern Masculine Halal Skincare. Diformulasikan untuk pria yang menghargai kebersihan, kualitas, dan efektivitas.
+                </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline-variant">
+                    © 2024 KAHF. Modern Masculine Halal Skincare.
+                </p>
+</div>
+<div>
+<h4 class="font-accent-text text-accent-text text-on-surface dark:text-inverse-on-surface font-semibold mb-sm">Explore</h4>
+<ul class="space-y-xs">
+<li><a class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Products</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Routine Builder</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">AI Skin Analysis</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-accent-text text-accent-text text-on-surface dark:text-inverse-on-surface font-semibold mb-sm">Legal</h4>
+<ul class="space-y-xs">
+<li><a class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Terms of Service</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">FAQ</a></li>
+</ul>
+</div>
+</div>
+</footer>
+<script>
+        // Simple navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-sm');
+                nav.classList.replace('bg-surface/90', 'bg-surface/95');
+            } else {
+                nav.classList.remove('shadow-sm');
+                nav.classList.replace('bg-surface/95', 'bg-surface/90');
+            }
+        });
+    </script>
+</body></html>

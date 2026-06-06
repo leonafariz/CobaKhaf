@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KAHF Store Locator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&amp;family=Inter:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-bright": "#e8fff0",
+                      "surface-variant": "#c1ecd4",
+                      "surface-container-low": "#d1fee5",
+                      "secondary-container": "#a1f4c8",
+                      "on-secondary-fixed": "#002113",
+                      "surface-dim": "#b8e4cc",
+                      "on-secondary-container": "#1b724f",
+                      "surface-container-high": "#c6f2da",
+                      "on-primary-fixed-variant": "#0e5138",
+                      "on-tertiary-fixed": "#3e0500",
+                      "tertiary-fixed": "#ffdad3",
+                      "secondary": "#116c4a",
+                      "on-tertiary-container": "#ffcfc5",
+                      "on-error": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "error": "#ba1a1a",
+                      "surface": "#e8fff0",
+                      "primary": "#0f5238",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed": "#002114",
+                      "tertiary": "#8e1700",
+                      "secondary-fixed-dim": "#86d7ad",
+                      "surface-tint": "#2c694e",
+                      "tertiary-container": "#b72607",
+                      "on-secondary-fixed-variant": "#005236",
+                      "on-primary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "primary-fixed-dim": "#95d4b3",
+                      "on-tertiary-fixed-variant": "#8d1600",
+                      "on-surface-variant": "#404943",
+                      "on-error-container": "#93000a",
+                      "surface-container": "#ccf8df",
+                      "primary-container": "#2d6a4f",
+                      "secondary-fixed": "#a1f4c8",
+                      "outline-variant": "#bfc9c1",
+                      "outline": "#707973",
+                      "inverse-surface": "#0e3727",
+                      "surface-container-highest": "#c1ecd4",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed-dim": "#ffb4a4",
+                      "inverse-on-surface": "#cffbe2",
+                      "primary-fixed": "#b1f0ce",
+                      "inverse-primary": "#95d4b3",
+                      "on-surface": "#002114",
+                      "background": "#e8fff0",
+                      "on-primary-container": "#a8e7c5",
+                      "on-background": "#002114"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "80px",
+                      "xs": "8px",
+                      "xl": "64px",
+                      "lg": "40px",
+                      "gutter": "20px",
+                      "base": "4px",
+                      "md": "24px",
+                      "sm": "16px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Inter"],
+                      "display-lg": ["Plus Jakarta Sans"],
+                      "body-md": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "accent-text": ["DM Sans"],
+                      "headline-sm": ["Plus Jakarta Sans"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "label-caps": ["DM Sans"],
+                      "display-lg-mobile": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "accent-text": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                      "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface-container-highest/90 backdrop-blur-md shadow-sm border-b-0">
+<div class="max-w-7xl mx-auto px-margin-desktop flex justify-between items-center h-20 md:px-margin-desktop px-margin-mobile">
+<div class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim tracking-tight">KAHF</div>
+<div class="hidden md:flex space-x-8 items-center">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#">Products</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#">AI Face Analysis</a>
+<a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary dark:border-primary-fixed-dim pb-1 transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#">Stores</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#">About</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#">Blog</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="hidden md:flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="search">search</span>
+</button>
+<button class="bg-primary text-on-primary font-body-md text-body-md px-6 py-2 rounded-lg font-semibold hover:opacity-80 transition-opacity duration-200 ease-in-out hidden md:block">Login</button>
+<button class="md:hidden flex items-center justify-center p-2 text-primary">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-20 flex flex-col md:flex-row h-[calc(100vh-80px)] overflow-hidden">
+<!-- Sidebar Store List -->
+<aside class="w-full md:w-1/3 lg:w-[400px] h-full bg-surface-container-lowest border-r border-surface-container-highest flex flex-col flex-shrink-0 z-10 shadow-[2px_0_12px_rgba(0,0,0,0.05)]">
+<!-- Header & Search -->
+<div class="p-sm md:p-md border-b border-surface-container-highest bg-surface-container-lowest z-20">
+<h1 class="font-headline-md text-headline-md text-primary mb-xs">Find a Store</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-md">Locate KAHF products near you.</p>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 transform -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-lowest border border-surface-container-highest rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-shadow placeholder:text-outline-variant" placeholder="Search city, neighborhood, or zip..." type="text"/>
+<button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-primary hover:text-primary-container p-1">
+<span class="material-symbols-outlined" data-icon="my_location">my_location</span>
+</button>
+</div>
+<!-- Filters -->
+<div class="flex gap-2 mt-sm overflow-x-auto pb-2 scrollbar-hide">
+<button class="whitespace-nowrap px-3 py-1.5 bg-surface-container rounded-full font-label-caps text-label-caps text-primary border border-primary/20 hover:bg-surface-variant transition-colors">All Stores</button>
+<button class="whitespace-nowrap px-3 py-1.5 bg-surface-container-lowest rounded-full font-label-caps text-label-caps text-on-surface-variant border border-surface-container-high hover:bg-surface-container transition-colors">Official Store</button>
+<button class="whitespace-nowrap px-3 py-1.5 bg-surface-container-lowest rounded-full font-label-caps text-label-caps text-on-surface-variant border border-surface-container-high hover:bg-surface-container transition-colors">Watson's</button>
+<button class="whitespace-nowrap px-3 py-1.5 bg-surface-container-lowest rounded-full font-label-caps text-label-caps text-on-surface-variant border border-surface-container-high hover:bg-surface-container transition-colors">Guardian</button>
+</div>
+</div>
+<!-- Store List Scrollable Area -->
+<div class="flex-grow overflow-y-auto p-sm md:p-md space-y-sm bg-surface-bright custom-scrollbar">
+<!-- Store Card 1 (Active/Selected) -->
+<div class="bg-surface-container-lowest rounded-xl p-md border-l-4 border-primary shadow-[0_2px_8px_rgba(0,0,0,0.08)] cursor-pointer transition-all hover:shadow-[0_4px_12px_rgba(0,0,0,0.1)]">
+<div class="flex justify-between items-start mb-2">
+<div>
+<span class="inline-block px-2 py-1 bg-surface-variant text-primary font-label-caps text-label-caps rounded-sm mb-2">Official Store</span>
+<h3 class="font-accent-text text-accent-text text-on-surface font-bold">KAHF Flagship Senayan</h3>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">1.2 km</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3 leading-relaxed">Senayan City Mall, Ground Floor Unit G-24. Jl. Asia Afrika Lot 19, Jakarta Pusat 10270</p>
+<div class="flex items-center gap-2 mb-4 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="schedule">schedule</span>
+<span class="text-secondary font-medium">Open Now</span>
+<span class="text-on-surface-variant">- Closes 22:00</span>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 bg-primary text-on-primary font-accent-text text-accent-text py-2 rounded-lg hover:opacity-90 transition-opacity flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="directions">directions</span>
+                            Directions
+                        </button>
+<button class="flex-none w-10 h-10 border border-primary text-primary rounded-lg flex justify-center items-center hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="call">call</span>
+</button>
+</div>
+</div>
+<!-- Store Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-md border border-surface-container-highest shadow-sm cursor-pointer transition-all hover:border-surface-variant hover:shadow-[0_2px_8px_rgba(0,0,0,0.08)]">
+<div class="flex justify-between items-start mb-2">
+<div>
+<span class="inline-block px-2 py-1 bg-surface-container text-on-surface-variant font-label-caps text-label-caps rounded-sm mb-2">Watson's</span>
+<h3 class="font-accent-text text-accent-text text-on-surface font-bold">Watson's Grand Indonesia</h3>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">2.5 km</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3 leading-relaxed">Grand Indonesia East Mall, Lower Ground. Jl. M.H. Thamrin No.1, Jakarta Pusat 10310</p>
+<div class="flex items-center gap-2 mb-4 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="schedule">schedule</span>
+<span class="text-secondary font-medium">Open Now</span>
+<span class="text-on-surface-variant">- Closes 21:30</span>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 border border-primary text-primary font-accent-text text-accent-text py-2 rounded-lg hover:bg-surface-container transition-colors flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="directions">directions</span>
+                            Directions
+                        </button>
+</div>
+</div>
+<!-- Store Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-md border border-surface-container-highest shadow-sm cursor-pointer transition-all hover:border-surface-variant hover:shadow-[0_2px_8px_rgba(0,0,0,0.08)]">
+<div class="flex justify-between items-start mb-2">
+<div>
+<span class="inline-block px-2 py-1 bg-surface-container text-on-surface-variant font-label-caps text-label-caps rounded-sm mb-2">Guardian</span>
+<h3 class="font-accent-text text-accent-text text-on-surface font-bold">Guardian Plaza Senayan</h3>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">3.1 km</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3 leading-relaxed">Plaza Senayan, Basement Floor. Jl. Asia Afrika No.8, Jakarta Pusat 10270</p>
+<div class="flex items-center gap-2 mb-4 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-outline text-[18px]" data-icon="schedule">schedule</span>
+<span class="text-error font-medium">Closed</span>
+<span class="text-on-surface-variant">- Opens tomorrow 10:00</span>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 border border-primary text-primary font-accent-text text-accent-text py-2 rounded-lg hover:bg-surface-container transition-colors flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="directions">directions</span>
+                            Directions
+                        </button>
+</div>
+</div>
+<!-- Store Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-md border border-surface-container-highest shadow-sm cursor-pointer transition-all hover:border-surface-variant hover:shadow-[0_2px_8px_rgba(0,0,0,0.08)]">
+<div class="flex justify-between items-start mb-2">
+<div>
+<span class="inline-block px-2 py-1 bg-surface-variant text-primary font-label-caps text-label-caps rounded-sm mb-2">Official Store</span>
+<h3 class="font-accent-text text-accent-text text-on-surface font-bold">KAHF Pop-up Kemang</h3>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">5.8 km</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3 leading-relaxed">Kemang Village, Avenue of the Stars. Jl. Pangeran Antasari No.36, Jakarta Selatan 12150</p>
+<div class="flex items-center gap-2 mb-4 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="schedule">schedule</span>
+<span class="text-secondary font-medium">Open Now</span>
+<span class="text-on-surface-variant">- Closes 22:00</span>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 border border-primary text-primary font-accent-text text-accent-text py-2 rounded-lg hover:bg-surface-container transition-colors flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="directions">directions</span>
+                            Directions
+                        </button>
+</div>
+</div>
+</div>
+</aside>
+<!-- Map Area -->
+<div class="flex-grow h-full bg-surface-variant relative overflow-hidden hidden md:block">
+<!-- Simulated Map Image Background -->
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A stylized, clean digital map interface showing city streets in a light mode aesthetic. The map features subtle green tints and soft pastel terrain colors, reflecting a modern, minimalist corporate style. No text is visible, just clean geometric roads and urban blocks." data-location="Jakarta" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCYi4rjus8EhPGaoTlViPtRNkaKBHQhoOiEO_VF2KKIXgmPSzGzKkewFluaSj0ARHLceF7FNaHiPLdlBcwQujhsG8OiBm8VMCIARmlp0RMHOz-1-ZXwqG9GxwOJUxixKgmE95SxqJ-n6OpwiOGbbFER4qY03ejd_hZiXKV1kxbljfeNtMVk0drLxtSWhX2ldjvXlVRYkMqKve6h2Xh8Tu9dZQ1wTNDlCPmosEWAiooI8nv8xiSlj7Jw2nlePsaGpDojubnzNrM5ATU'); filter: grayscale(20%) sepia(10%) hue-rotate(80deg) brightness(1.1) contrast(0.9);"></div>
+<!-- Map Overlay UI -->
+<div class="absolute top-md right-md flex flex-col gap-2 z-10">
+<button class="w-10 h-10 bg-surface-container-lowest rounded-lg shadow-[0_2px_8px_rgba(0,0,0,0.1)] flex items-center justify-center text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="zoom_in">zoom_in</span>
+</button>
+<button class="w-10 h-10 bg-surface-container-lowest rounded-lg shadow-[0_2px_8px_rgba(0,0,0,0.1)] flex items-center justify-center text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="zoom_out">zoom_out</span>
+</button>
+<button class="w-10 h-10 bg-surface-container-lowest rounded-lg shadow-[0_2px_8px_rgba(0,0,0,0.1)] flex items-center justify-center text-primary mt-2 hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="my_location">my_location</span>
+</button>
+</div>
+<!-- Custom Map Markers -->
+<!-- Marker 1 (Active) -->
+<div class="absolute top-1/2 left-1/3 transform -translate-x-1/2 -translate-y-full z-20 cursor-pointer group">
+<div class="relative">
+<div class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-lg border-2 border-surface-container-lowest z-10 relative animate-bounce">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+</div>
+<!-- Info Window Tooltip -->
+<div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-3 bg-surface-container-lowest p-3 rounded-lg shadow-[0_4px_16px_rgba(0,0,0,0.1)] w-48 opacity-100 transition-opacity z-30 pointer-events-none">
+<h4 class="font-accent-text text-accent-text font-bold text-on-surface mb-1">KAHF Flagship Senayan</h4>
+<p class="font-body-sm text-[12px] text-on-surface-variant mb-2">Open until 22:00</p>
+<div class="text-primary font-accent-text text-[12px] font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="directions">directions</span> Get Directions
+                        </div>
+<!-- Triangle pointer -->
+<div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[8px] border-r-[8px] border-t-[8px] border-l-transparent border-r-transparent border-t-surface-container-lowest"></div>
+</div>
+</div>
+</div>
+<!-- Marker 2 (Inactive) -->
+<div class="absolute top-1/3 left-2/3 transform -translate-x-1/2 -translate-y-full z-10 cursor-pointer group hover:z-20">
+<div class="relative">
+<div class="w-10 h-10 bg-surface-container-lowest text-primary rounded-full flex items-center justify-center shadow-md border-2 border-primary z-10 relative transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-[20px]" data-icon="local_mall">local_mall</span>
+</div>
+</div>
+</div>
+<!-- Marker 3 (Inactive) -->
+<div class="absolute bottom-1/4 left-1/2 transform -translate-x-1/2 -translate-y-full z-10 cursor-pointer group hover:z-20">
+<div class="relative">
+<div class="w-10 h-10 bg-surface-container-lowest text-primary rounded-full flex items-center justify-center shadow-md border-2 border-primary z-10 relative transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-[20px]" data-icon="local_mall">local_mall</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<style>
+        /* Hide scrollbar for clean UI but keep functionality */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Custom delicate scrollbar for store list */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #bfc9c1; /* outline-variant */
+            border-radius: 20px;
+        }
+    </style>
+</body></html>

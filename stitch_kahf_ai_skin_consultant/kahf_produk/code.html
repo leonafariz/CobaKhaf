@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KAHF | Product Catalog</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&amp;family=Inter:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#0f5238",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#404943",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#95d4b3",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#86d7ad",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#a8e7c5",
+                        "primary-container": "#2d6a4f",
+                        "inverse-surface": "#0e3727",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#1b724f",
+                        "on-secondary-fixed": "#002113",
+                        "surface-container-low": "#d1fee5",
+                        "surface": "#e8fff0",
+                        "background": "#e8fff0",
+                        "inverse-primary": "#95d4b3",
+                        "inverse-on-surface": "#cffbe2",
+                        "surface-bright": "#e8fff0",
+                        "surface-container-high": "#c6f2da",
+                        "on-tertiary-fixed": "#3e0500",
+                        "secondary": "#116c4a",
+                        "on-surface": "#002114",
+                        "outline": "#707973",
+                        "surface-dim": "#b8e4cc",
+                        "primary-fixed": "#b1f0ce",
+                        "secondary-fixed": "#a1f4c8",
+                        "surface-container": "#ccf8df",
+                        "on-background": "#002114",
+                        "tertiary-container": "#b72607",
+                        "secondary-container": "#a1f4c8",
+                        "on-tertiary-container": "#ffcfc5",
+                        "on-tertiary-fixed-variant": "#8d1600",
+                        "surface-container-highest": "#c1ecd4",
+                        "surface-variant": "#c1ecd4",
+                        "on-primary-fixed-variant": "#0e5138",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#002114",
+                        "tertiary": "#8e1700",
+                        "tertiary-fixed": "#ffdad3",
+                        "outline-variant": "#bfc9c1",
+                        "tertiary-fixed-dim": "#ffb4a4",
+                        "surface-tint": "#2c694e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "64px",
+                        "sm": "16px",
+                        "gutter": "20px",
+                        "margin-desktop": "80px",
+                        "base": "4px",
+                        "margin-mobile": "16px",
+                        "md": "24px",
+                        "xs": "8px",
+                        "lg": "40px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["DM Sans"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "accent-text": ["DM Sans"],
+                        "display-lg-mobile": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "accent-text": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .card-shadow {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-background font-body-md antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface-container-highest/90 backdrop-blur-md shadow-sm border-b border-surface-container">
+<div class="max-w-7xl mx-auto px-margin-desktop md:flex justify-between items-center h-20 hidden">
+<div class="flex items-center gap-xl">
+<a class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim tracking-tight" href="#">KAHF</a>
+<div class="flex gap-lg items-center">
+<a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary dark:border-primary-fixed-dim pb-1 font-body-md text-body-md hover:opacity-80 transition-opacity duration-200 ease-in-out" href="#">Products</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors font-body-md text-body-md hover:opacity-80 transition-opacity duration-200 ease-in-out" href="#">AI Face Analysis</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors font-body-md text-body-md hover:opacity-80 transition-opacity duration-200 ease-in-out" href="#">About</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors font-body-md text-body-md hover:opacity-80 transition-opacity duration-200 ease-in-out" href="#">Blog</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors" data-icon="search">search</span>
+<a class="border border-primary text-primary px-4 py-2 rounded-lg font-body-md text-body-md font-semibold hover:bg-primary hover:text-on-primary transition-colors duration-200 ease-in-out" href="#">Login</a>
+</div>
+</div>
+<!-- Mobile Nav Placeholder (Simplified for strictly desktop focus per guidance, but keeping structure) -->
+<div class="md:hidden flex justify-between items-center px-margin-mobile h-20">
+<a class="font-headline-md text-headline-md text-primary tracking-tight" href="#">KAHF</a>
+<span class="material-symbols-outlined text-on-surface" data-icon="menu">menu</span>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-20 pb-xl min-h-screen flex flex-col">
+<!-- Header Section -->
+<header class="max-w-7xl mx-auto w-full px-margin-desktop py-xl text-center">
+<h1 class="font-display-lg text-display-lg text-primary mb-sm">Master Your Regimen</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Scientifically formulated grooming essentials designed to honor modern masculinity and purity.</p>
+</header>
+<!-- Sticky Filter Header -->
+<div class="sticky top-20 z-40 bg-surface/95 backdrop-blur-sm border-b border-surface-container-high py-4 mb-xl">
+<div class="max-w-7xl mx-auto px-margin-desktop flex flex-wrap gap-sm items-center justify-between">
+<div class="flex gap-sm overflow-x-auto pb-2 md:pb-0 scrollbar-hide w-full md:w-auto">
+<button class="px-4 py-2 bg-primary text-on-primary rounded-full font-body-sm text-body-sm whitespace-nowrap transition-transform hover:scale-105">All Formulations</button>
+<button class="px-4 py-2 bg-surface-container-lowest border border-surface-container-high text-on-surface-variant rounded-full font-body-sm text-body-sm whitespace-nowrap hover:border-primary transition-colors">Face Wash</button>
+<button class="px-4 py-2 bg-surface-container-lowest border border-surface-container-high text-on-surface-variant rounded-full font-body-sm text-body-sm whitespace-nowrap hover:border-primary transition-colors">Moisturizer</button>
+<button class="px-4 py-2 bg-surface-container-lowest border border-surface-container-high text-on-surface-variant rounded-full font-body-sm text-body-sm whitespace-nowrap hover:border-primary transition-colors">Body Wash</button>
+<button class="px-4 py-2 bg-surface-container-lowest border border-surface-container-high text-on-surface-variant rounded-full font-body-sm text-body-sm whitespace-nowrap hover:border-primary transition-colors">Fragrance</button>
+</div>
+<div class="flex gap-sm w-full md:w-auto mt-4 md:mt-0">
+<select class="form-select w-full md:w-40 bg-surface-container-lowest border border-surface-container-high text-on-surface-variant rounded-lg font-body-sm text-body-sm focus:border-primary focus:ring-1 focus:ring-primary">
+<option>Skin Type</option>
+<option>Oily</option>
+<option>Dry</option>
+<option>Combination</option>
+<option>Sensitive</option>
+</select>
+<select class="form-select w-full md:w-40 bg-surface-container-lowest border border-surface-container-high text-on-surface-variant rounded-lg font-body-sm text-body-sm focus:border-primary focus:ring-1 focus:ring-primary">
+<option>Concern</option>
+<option>Acne</option>
+<option>Dullness</option>
+<option>Aging</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Product Grid -->
+<section class="max-w-7xl mx-auto w-full px-margin-desktop grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-xl">
+<!-- Product Card 1 -->
+<div class="bg-surface-container-lowest rounded-[12px] card-shadow flex flex-col group transition-transform duration-300 hover:-translate-y-1">
+<div class="relative h-64 w-full bg-surface-container-low overflow-hidden rounded-t-[12px]">
+<img alt="Product Image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sleek, minimalist dark green tube of men's facial wash standing upright on a clean, light sage green plinth. Soft, diffused natural light illuminates the matte texture of the packaging. The setting implies a premium, modern apothecary environment with subtle reflections and pristine clarity. The overall mood is grounded, masculine, and purifying." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSON_dNg4LvDnO2nYg50y9a8NlB3mUYtwHtdncORZ6uguuB23fViLmOqqAdT8gGZbsiL8rWcXUAFByFnmi4fyBAvIBZkOYU399JXFk4nIzJR65crV65G1f4TdX25vd_w1CAMfR2PARchxDuQ6LYMOTMQ34j5CLZAlIFy8B4GirKql9SkQtN6Q7kDKDayOwA4rA80oo_pjY3MgVudqPBEQd7NTho96ppXncYzzshV_G1xuI_36rVFhoc1QdrjVLVNNpZbLqtkT5X30"/>
+<div class="absolute top-sm left-sm flex gap-xs">
+<span class="bg-[#E8F5E2] text-primary font-label-caps text-label-caps px-2 py-1 rounded">HALAL</span>
+<span class="bg-[#E8F5E2] text-primary font-label-caps text-label-caps px-2 py-1 rounded">ACNE CARE</span>
+</div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Oil Control &amp; Acne Care Face Wash</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-md flex-grow">Formulated with Mediterranean Sage and French Cypress to combat excess oil and acne.</p>
+<div class="flex items-center justify-between mb-md">
+<span class="font-body-lg text-body-lg font-semibold text-primary">Rp 39.500</span>
+<div class="flex text-[#F59E0B] text-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star_half" data-weight="fill">star_half</span>
+</div>
+</div>
+<button class="w-full bg-[#ee4d2d] text-white font-body-md text-body-md font-semibold py-3 rounded-lg flex justify-center items-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[20px]" data-icon="shopping_cart">shopping_cart</span>
+                        Beli di Shopee
+                    </button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface-container-lowest rounded-[12px] card-shadow flex flex-col group transition-transform duration-300 hover:-translate-y-1">
+<div class="relative h-64 w-full bg-surface-container-low overflow-hidden rounded-t-[12px]">
+<img alt="Product Image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A premium, dark emerald green pump bottle of men's moisturizer placed on a pristine white marble surface. Bright, clear studio lighting highlights the elegant simplicity of the bottle's design. The background is a soft, out-of-focus light sage color, reinforcing a clean, clinical yet masculine aesthetic. The mood is refreshing and scientifically advanced." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbskz0yichq9vI60dzo2oCZiIUfkSu7hdAdMd5v5noxObSiTSRSjo2TjqDQxbmGTDFzKc4-wkeks2_GmXpmdQQQzvFbYyUcg6H-rBZyLxvieAL3Dt8IOA7Pg4sYFhRVoolRmU7zhar2o00S5laHuD2FB4p5yN9gWblcbVRLmW4pRZ-DBPSXsNwzPH5qBXWqqK3TmYbnt02EO9MjVmQKAmT2ftKp2xI5Ursq6k1xWVvtmr5cCfxctPCEdvQQGf_GPOxhVwJKBbX9J8"/>
+<div class="absolute top-sm left-sm flex gap-xs">
+<span class="bg-[#E8F5E2] text-primary font-label-caps text-label-caps px-2 py-1 rounded">HALAL</span>
+<span class="bg-[#E8F5E2] text-primary font-label-caps text-label-caps px-2 py-1 rounded">HYDRATION</span>
+</div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Skin Energizing &amp; Brightening Face Wash</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-md flex-grow">Moroccan Mint and Mediterranean Grapefruit extract to revitalize dull skin.</p>
+<div class="flex items-center justify-between mb-md">
+<span class="font-body-lg text-body-lg font-semibold text-primary">Rp 39.500</span>
+<div class="flex text-[#F59E0B] text-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+</div>
+</div>
+<button class="w-full bg-[#ee4d2d] text-white font-body-md text-body-md font-semibold py-3 rounded-lg flex justify-center items-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[20px]" data-icon="shopping_cart">shopping_cart</span>
+                        Beli di Shopee
+                    </button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-surface-container-lowest rounded-[12px] card-shadow flex flex-col group transition-transform duration-300 hover:-translate-y-1">
+<div class="relative h-64 w-full bg-surface-container-low overflow-hidden rounded-t-[12px]">
+<img alt="Product Image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sophisticated, dark matte green glass bottle of men's cologne sitting on a textured slate surface. Dramatic, moody directional lighting creates sharp shadows, emphasizing the masculine and premium nature of the fragrance. The background fades into a deep, rich forest green void. The atmosphere is confident, bold, and luxurious." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhMEcLrAtaKJYaI_Nu1MtBfT0KZBy8EYwwGQzsvaSY9DCQOgg3q73evcGd5j2MbPn3PBdo5Io3VYIzF8pm3zsBIkCK3FLk7n_0IfJ7N7GEHQ_VEZ7DI0YiVhlKyHxcw3t2NukT9G2uEp23IIrQIAd73u8U_E-DhHDeEYjfoHoYKbVZOX2WSKhWKhAY3dAmsr-jInCc5MBHe91Mo0fEonajZ2pV8Mm6MLzFg0TB9w2TjXH1zccoCoQwEQ0CkmkH2cPdMnvskoA4-EI"/>
+<div class="absolute top-sm left-sm flex gap-xs">
+<span class="bg-[#E8F5E2] text-primary font-label-caps text-label-caps px-2 py-1 rounded">HALAL</span>
+<span class="bg-[#E8F5E2] text-primary font-label-caps text-label-caps px-2 py-1 rounded">EDT</span>
+</div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Revered Oud Eau de Toilette</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-md flex-grow">A dignified blend of Rose, Lemon, and masculine Agarwood notes.</p>
+<div class="flex items-center justify-between mb-md">
+<span class="font-body-lg text-body-lg font-semibold text-primary">Rp 180.000</span>
+<div class="flex text-[#F59E0B] text-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star_outline" data-weight="fill">star_outline</span>
+</div>
+</div>
+<button class="w-full bg-[#ee4d2d] text-white font-body-md text-body-md font-semibold py-3 rounded-lg flex justify-center items-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[20px]" data-icon="shopping_cart">shopping_cart</span>
+                        Beli di Shopee
+                    </button>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-surface-container-lowest rounded-[12px] card-shadow flex flex-col group transition-transform duration-300 hover:-translate-y-1">
+<div class="relative h-64 w-full bg-surface-container-low overflow-hidden rounded-t-[12px]">
+<img alt="Product Image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A clean, structured display of a dark green men's deodorant roll-on set against a backdrop of fresh, dewy mint leaves and water splashes. High-speed photography captures crisp water droplets in mid-air, emphasizing freshness and active protection. The lighting is bright, cool, and energizing, fitting a light sage and deep green masculine brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbPRasjZZl3I1uK6Xydp1XkLWG685g8_MAbZEtJqX4x2kIvP4tyH5ad54GkXzSJrJRpDw0GA2sxUCmD0qJNxv9uXS9S6SGJ8fkQbteSL4JtcywgxsgAHFy0iE7Ks05mpq5hBPbuBiLk4ShI_XIXK-zhF7wARyszL_xCMzQkz1aD0DbsLnSSG6XLTtGHQtXwzB5Vy4JPbNWbvSqobsvpeqgrBQc0UqQfPFn09x7PtJPRGlXL7xhnhV7fN9QYitgirieEtps-tf5Pf8"/>
+<div class="absolute top-sm left-sm flex gap-xs">
+<span class="bg-[#E8F5E2] text-primary font-label-caps text-label-caps px-2 py-1 rounded">HALAL</span>
+<span class="bg-[#E8F5E2] text-primary font-label-caps text-label-caps px-2 py-1 rounded">48H PROTECTION</span>
+</div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Soothing Antiperspirant Deodorant</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-md flex-grow">Natural antibacterial protection with Comfrey Allantoin to soothe the skin.</p>
+<div class="flex items-center justify-between mb-md">
+<span class="font-body-lg text-body-lg font-semibold text-primary">Rp 25.000</span>
+<div class="flex text-[#F59E0B] text-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star_half" data-weight="fill">star_half</span>
+</div>
+</div>
+<button class="w-full bg-[#ee4d2d] text-white font-body-md text-body-md font-semibold py-3 rounded-lg flex justify-center items-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[20px]" data-icon="shopping_cart">shopping_cart</span>
+                        Beli di Shopee
+                    </button>
+</div>
+</div>
+</section>
+<!-- Feature Banner -->
+<section class="max-w-7xl mx-auto w-full px-margin-desktop mb-xl">
+<div class="relative w-full rounded-xl overflow-hidden min-h-[400px] flex items-center p-xl bg-primary-container">
+<!-- Background Image Layer -->
+<div class="absolute inset-0 z-0">
+<img alt="Banner Background" class="w-full h-full object-cover opacity-40 mix-blend-multiply" data-alt="A wide cinematic shot of a lush, misty cedar forest at dawn. The atmosphere is deeply masculine, quiet, and revitalizing. Sunlight pierces through the dense canopy of deep green trees, creating dynamic rays of light. The overall tone is cool and grounded, serving as a subtle, organic backdrop for a premium men's skincare collection banner." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0ttg9YhXxNx-mN7Uz2PZGLQ3gzhKB9rpDcK0GF6vSTXCDxeMQs0q0pgiT0mYRma8kWgE9WT65gvkdmi59ru9g0Zto2Zaxi7i4kiS1AIq2R6_OCAJocUHZH89gZJyL4etuBPNiAGQbWqPm5IevQnl5ANOse-f4kflCGr3DoLEQDH1aHcCaEgA9Ze9usqAU6FeOpFddXf9Bw-LInqUmwyQgU0qOtj-pqw5LOQl5CUl7nojhiQ5y9pL4gL6vYc6JST7vTPSGWO_fJ2I"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary to-transparent opacity-90"></div>
+</div>
+<!-- Content Layer -->
+<div class="relative z-10 max-w-lg">
+<span class="inline-block px-3 py-1 bg-surface-container-low text-primary font-label-caps text-label-caps rounded-full mb-4">NEW COLLECTION</span>
+<h2 class="font-display-lg text-display-lg text-on-primary mb-sm">The Heritage Series</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container mb-lg">Discover our new line infused with traditional botanical extracts, refined through modern science for the ultimate grooming experience.</p>
+<button class="bg-surface-container-lowest text-primary font-body-md text-body-md font-bold py-3 px-8 rounded-lg hover:bg-surface transition-colors shadow-sm">Explore Collection</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-highest dark:bg-inverse-surface py-xl border-t border-surface-container">
+<div class="max-w-7xl mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="flex flex-col gap-sm">
+<span class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed-dim">KAHF</span>
+<p class="font-body-sm text-body-sm text-on-surface dark:text-inverse-on-surface opacity-80 max-w-xs">Modern Masculine Halal Skincare.</p>
+<div class="flex gap-4 mt-2">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 transition-opacity" data-icon="language">language</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 transition-opacity" data-icon="mail">mail</span>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-accent-text text-accent-text text-primary dark:text-primary-fixed-dim font-bold mb-2">Shop</h4>
+<a class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Products</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">New Arrivals</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Best Sellers</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-accent-text text-accent-text text-primary dark:text-primary-fixed-dim font-bold mb-2">Experience</h4>
+<a class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Routine Builder</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">AI Skin Analysis</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Journal</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-accent-text text-accent-text text-primary dark:text-primary-fixed-dim font-bold mb-2">Support</h4>
+<a class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">FAQ</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-margin-desktop mt-xl pt-md border-t border-surface-container-high dark:border-outline-variant/20 flex flex-col md:flex-row justify-between items-center">
+<p class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline-variant">© 2024 KAHF. Modern Masculine Halal Skincare.</p>
+</div>
+</footer>
+</body></html>
